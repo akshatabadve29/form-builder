@@ -44,6 +44,13 @@ const FormBuilder: React.FC<{ schema: FormSchema }> = ({ schema }) => {
       setTimeout(() => {
         alert("Form Submitted:\n" + JSON.stringify(formData, null, 2));
         setIsSubmitting(false);
+
+        // ✅ Reset form fields
+        const resetData: Record<string, any> = {};
+        schema.fields.forEach((field) => {
+          resetData[field.id] = field.type === "checkbox" ? false : "";
+        });
+        setFormData(resetData);
       }, 1000);
     }
   };
@@ -75,15 +82,27 @@ const FormBuilder: React.FC<{ schema: FormSchema }> = ({ schema }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>{schema.title}</h2>
-      {schema.fields.map(renderField)}
-      <button type="submit" disabled={isSubmitting}>
-        {isSubmitting
-          ? schema.submitButton.loadingText
-          : schema.submitButton.text}
-      </button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <div className="">
+          <div className="form-title">
+            <h2>{schema.title}</h2>
+          </div>
+          <div className="">{schema.fields.map(renderField)}</div>
+          <div className="">
+            <button
+              type="submit"
+              className="btn btn-primary"
+              disabled={isSubmitting}
+            >
+              {isSubmitting
+                ? schema.submitButton.loadingText
+                : schema.submitButton.text}
+            </button>
+          </div>
+        </div>
+      </form>
+    </>
   );
 };
 

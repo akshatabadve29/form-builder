@@ -1,12 +1,41 @@
-# React + Vite
+# 🧩 Dynamic Form Builder (React + Vite + TypeScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A low-code form builder that renders dynamic forms based on a JSON schema. Built using React, Vite, and TypeScript — this component is designed to be reusable, extensible, and highly configurable.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Features
 
-## Expanding the ESLint configuration
+- ✅ JSON Schema-based Form Rendering
+- ✅ Supports Field Types: `text`, `number`, `select`, `checkbox`, `date`
+- ✅ Dynamic Validation Rules (e.g., `required`, `minLength`)
+- ✅ Conditional Fields (using `dependsOn`)
+- ✅ Form Submission Handling
+- ✅ Type-safe schema structure with TypeScript
+- ✅ Bootstrap Styling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Quick Start
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/form-builder.git
+cd form-builder
+
+### 2. Install dependencies
+npm install
+
+### 3. Start development server
+npm run dev
+
+📦 Built With
+React
+Vite
+TypeScript
+Bootstrap 5
+
+👨‍💻 Author
+Akshata Badve
+🔗 GitHub: @akshatabadve29

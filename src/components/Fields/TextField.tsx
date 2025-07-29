@@ -7,15 +7,16 @@ const TextField: React.FC<{
   error?: string;
   onChange: (id: string, value: string) => void;
 }> = ({ field, value, error, onChange }) => (
-  <div>
-    <label>{field.label}</label>
+  <div className="mb-3">
+    <label className="form-label">{field.label}</label>
     <input
       type="text"
-      placeholder={field.placeholder}
+      className={`form-control ${error ? "is-invalid" : ""}`}
+      placeholder={field.placeholder ? field.placeholder : field.label}
       value={value || ""}
       onChange={(e) => onChange(field.id, e.target.value)}
     />
-    {error && <div style={{ color: "red" }}>{error}</div>}
+    {error && <div className="invalid-feedback">{error}</div>}
   </div>
 );
 

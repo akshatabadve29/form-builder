@@ -7,14 +7,15 @@ const DateField: React.FC<{
   error?: string;
   onChange: (id: string, value: string) => void;
 }> = ({ field, value, error, onChange }) => (
-  <div>
-    <label>{field.label}</label>
+  <div className="mb-3">
+    <label className="form-label">{field.label}</label>
     <input
       type="date"
       value={value || ""}
+      className={` ${error ? "is-invalid" : ""}`}
       onChange={(e) => onChange(field.id, e.target.value)}
     />
-    {error && <div style={{ color: "red" }}>{error}</div>}
+    {error && <div className="invalid-feedback">{error}</div>}
   </div>
 );
 

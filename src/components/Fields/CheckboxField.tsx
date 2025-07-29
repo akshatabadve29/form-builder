@@ -7,16 +7,17 @@ const CheckboxField: React.FC<{
   error?: string;
   onChange: (id: string, value: boolean) => void;
 }> = ({ field, value, error, onChange }) => (
-  <div>
-    <label>
+  <div className="mb-3 ">
+    <label className="form-label">
       <input
         type="checkbox"
+        className={`form-check-input ${error ? "is-invalid" : ""}`}
         checked={value || false}
         onChange={(e) => onChange(field.id, e.target.checked)}
       />
       {field.label}
     </label>
-    {error && <div style={{ color: "red" }}>{error}</div>}
+    {error && <div className="invalid-feedback">{error}</div>}
   </div>
 );
 

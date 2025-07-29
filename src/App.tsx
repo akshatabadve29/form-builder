@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import FormBuilder from "./components/FormBuilder";
 import { FormSchema } from "./types/schema";
+import "./app.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const App: React.FC = () => {
   const [schema, setSchema] = useState<FormSchema | null>(null);
@@ -17,16 +20,24 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Dynamic Form Builder</h1>
-      {isLoading ? (
-        <p>Form is loading...!</p>
-      ) : schema ? (
-        <FormBuilder schema={schema} />
-      ) : (
-        <p>No form data</p>
-      )}
-    </div>
+    <>
+      {" "}
+      <Header />
+      <div className="container p-30">
+        <div className="form-container">
+          {isLoading ? (
+            <div className="loading-container">
+              <h2>Form is loading...!</h2>
+            </div>
+          ) : schema ? (
+            <FormBuilder schema={schema} />
+          ) : (
+            <p>No form data</p>
+          )}
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

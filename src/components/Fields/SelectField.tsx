@@ -7,9 +7,10 @@ const SelectField: React.FC<{
   error?: string;
   onChange: (id: string, value: string) => void;
 }> = ({ field, value, error, onChange }) => (
-  <div>
-    <label>{field.label}</label>
+  <div className="mb-3">
+    <label className="form-label">{field.label}</label>
     <select
+      className={`form-select ${error ? "is-invalid" : ""}`}
       value={value || ""}
       onChange={(e) => onChange(field.id, e.target.value)}
     >
@@ -23,7 +24,7 @@ const SelectField: React.FC<{
         </option>
       ))}
     </select>
-    {error && <div style={{ color: "red" }}>{error}</div>}
+    {error && <div className="invalid-feedback">{error}</div>}
   </div>
 );
 
