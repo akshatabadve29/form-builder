@@ -24,21 +24,22 @@ A low-code form builder that renders dynamic forms based on a JSON schema. Built
 git clone https://github.com/your-username/form-builder.git
 cd form-builder
 
-### 2. Install dependencies
+## 2. Install dependencies
 ```bash
 npm install
 
-### 3. Start development server
+## 3. Start development server
 ```bash
 npm run dev
 
 ---
-📦 Built With
+ 
+## 📦 Built With
 React
 Vite
 TypeScript
 Bootstrap 5
 
-👨‍💻 Author
+## 👨‍💻 Author
 Akshata Badve
 🔗 GitHub: @akshatabadve29
