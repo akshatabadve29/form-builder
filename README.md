@@ -25,11 +25,14 @@ git clone https://github.com/your-username/form-builder.git
 cd form-builder
 
 ### 2. Install dependencies
+```bash
 npm install
 
 ### 3. Start development server
+```bash
 npm run dev
 
+---
 📦 Built With
 React
 Vite
